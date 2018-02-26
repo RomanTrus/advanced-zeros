@@ -8,11 +8,16 @@ module.exports = function getZerosCount(number, base) {
 		}
 		i++;
 	}
+  
   factors.sort((a,b)=>{return a-b})
-  let counter=0;
+  console.log(factors)
+  
+  var counter=0;
   while (number>0){
+    console.log(counter)
   number=Math.floor(number/factors[factors.length-1])
   counter+=number
 }
-return counter
+
+return Math.floor(counter/(factors.filter(num=>num===factors[factors.length-1]).length))
 }
