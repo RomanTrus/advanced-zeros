@@ -10,14 +10,22 @@ module.exports = function getZerosCount(number, base) {
 	}
   
   factors.sort((a,b)=>{return a-b})
-  console.log(factors)
-  
-  var counter=0;
-  while (number>0){
-    console.log(counter)
-  number=Math.floor(number/factors[factors.length-1])
-  counter+=number
-}
-
-return Math.floor(counter/(factors.filter(num=>num===factors[factors.length-1]).length))
+  var factorPows=[];
+  factors.map((x,index)=>{
+  	if(factors[index-1]!=x||index==0){
+  		factorPows.push([x,1])
+  	}else {factorPows[factorPows.length-1][1]++}
+  })
+ let answs=[];
+ factorPows.map((x)=>{
+ 	var num=number;
+ 	var counter=0;
+ 	while(num>0){
+ 		num=Math.floor(num/x[0])
+ 		counter+=num;
+ 	}
+ 	answs.push(Math.floor(counter/x[1]))
+ })
+ return Math.min(...answs)
+ 
 }
