@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "d649bbc2-dbb7-4507-8a01-bb479967a526",
+		"name": "NWCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/OData/OData.svc/Products?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"OData",
+						"OData.svc",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
